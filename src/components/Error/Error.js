@@ -1,11 +1,10 @@
 import React from "react";
-import {Card} from "react-bootstrap";
-import styled from "styled-components";
+import { Card } from "react-bootstrap";
 
-const Error = ({text}) => {
+const Error = ({ text }) => {
   return (
     <Card data-test="errorComponent">
-        <Card.Title>{text}</Card.Title>
+      <Card.Title>{text}</Card.Title>
     </Card>
   );
 };

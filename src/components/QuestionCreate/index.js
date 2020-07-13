@@ -1,3 +1,3 @@
-import QuestionCreate from './QuestionCreate';
+import QuestionCreate from "./QuestionCreate";
 
 export default QuestionCreate;

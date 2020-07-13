@@ -1,3 +1,3 @@
-import QuestionList from './QuestionList';
+import QuestionList from "./QuestionList";
 
 export default QuestionList;

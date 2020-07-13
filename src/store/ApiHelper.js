@@ -1,5 +1,11 @@
 import { BASEURL } from "./../Util";
-import { setQuestions, setQuestion, setVote, setAlert, setError } from "./actions";
+import {
+  setQuestions,
+  setQuestion,
+  setVote,
+  setAlert,
+  setError,
+} from "./actions";
 
 export const getQuestions = () => (dispatch) => {
   const url = `${BASEURL}/questions`;
@@ -66,12 +72,11 @@ export const postVote = (choice, questionId) => (dispatch) => {
 
 export const createQuestion = (newQuestion) => (dispatch) => {
   return new Promise((resolve, reject) => {
-    const filteredList = newQuestion.cho
     const url = `${BASEURL}/questions`;
     const data = {
       question: newQuestion.question,
-      choices: newQuestion.choiceList
-    }
+      choices: newQuestion.choiceList,
+    };
     var obj = {
       method: "POST",
       headers: new Headers({
@@ -87,13 +92,12 @@ export const createQuestion = (newQuestion) => (dispatch) => {
       .catch((error) => {
         dispatch(setError(error));
       });
-  })
-
+  });
 };
 
 export const showAlert = (text, type) => (dispatch) => {
-  dispatch(setAlert({ alertOn: true, text, type}))
+  dispatch(setAlert({ alertOn: true, text, type }));
   window.setTimeout(() => {
-    dispatch(setAlert({ alertOn: false}))
+    dispatch(setAlert({ alertOn: false }));
   }, 2000);
 };
