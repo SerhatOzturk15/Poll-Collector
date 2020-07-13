@@ -11,7 +11,7 @@ const StyledAlert = styled(AlertComp)`
 const Alert = ({alert}) => {
 
 
-    return (  <StyledAlert  variant={alert.type}>
+    return (  <StyledAlert  variant={alert.type} data-test="alertComponent">
         {alert.text}
       </StyledAlert>)
 }

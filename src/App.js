@@ -15,7 +15,7 @@ const AppContainer = () => {
     <section className="App">
       <AppBar title="Poll Collection" />
       {error ? (
-        <Error />
+        <Error text = 'Application has not been working properly. Please check your internet connection' />
       ) : (
         <Router>
           <Switch>

@@ -40,16 +40,16 @@ const convertedDate = (isoFormat) => {
 const QuestionList = ({ questions = [], handleQuestionClick, routeNewQuestion,buttonText }) => {
   return (
     <>
-    <h3 style = {{padding: '16px'}}>Questions</h3>
-    <StyledButton aria-label = {buttonText} onClick={routeNewQuestion}>{buttonText}</StyledButton>
+    <h3 style = {{padding: '16px'}} data-test="questionListComponent">Questions</h3>
+    <StyledButton aria-label = {buttonText} onClick={routeNewQuestion} data-test="createQuestionButton">{buttonText}</StyledButton>
     <CardGroup>
       {questions.map((question, index) => {
         return (
-          <StyledCard key = {index} onClick = {() => handleQuestionClick(question.url)}>
+          <StyledCard key = {index} onClick = {() => handleQuestionClick(question.url)} data-test="questionListItem">
             {/* <Card.Img variant="top" src="holder.js/100px160" /> */}
             <Card.Body>
               <StyledTitle>{question.question}</StyledTitle>
-              <Card.Text>
+              <Card.Text data-test="questionListChoices">
                 {`Number of Choices : ${question.choices.length}`}
               </Card.Text>
             </Card.Body>

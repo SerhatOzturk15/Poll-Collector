@@ -9,7 +9,7 @@ const StyledNavbar = styled(Navbar)`
 
 const AppBar = ({ title }) => {
   return (
-    <StyledNavbar bg="dark" variant="dark"  data-test="appbarName">
+    <StyledNavbar bg="dark" variant="dark"  data-test="appBarComponent">
       <Navbar.Brand aria-label="home page" href="/">{title}</Navbar.Brand>
     </StyledNavbar>
   );

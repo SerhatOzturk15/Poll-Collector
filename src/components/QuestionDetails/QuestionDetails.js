@@ -51,15 +51,15 @@ const QuestionDetails = ({
 
   return (
     <>
-      <div style={{ textAlign: "left", fontWeight: "bold" }}>
-        Question: {question.question}{" "}
+      <div style={{ textAlign: "left", fontWeight: "bold" }} data-test="questionDetailsComponent">
+        Question: {question.question}
       </div>
       {headerList && (
         <StyledRow>
-          <Col sm={4}>{headerList[0]}</Col>
-          <Col sm={2}>{headerList[1]}</Col>
-          <Col sm={2}>{headerList[2]}</Col>
-          <Col sm={4}>{headerList[3]}</Col>
+          <Col sm={4} data-test="questionDetailsHeader1" >{headerList[0]}</Col>
+          <Col sm={2} data-test="questionDetailsHeader2" >{headerList[1]}</Col>
+          <Col sm={2} data-test="questionDetailsHeader3" >{headerList[2]}</Col>
+          <Col sm={4} data-test="questionDetailsHeader4" >{headerList[3]}</Col>
         </StyledRow>
       )}
       {question.choices &&
@@ -71,11 +71,12 @@ const QuestionDetails = ({
                 backgroundColor:
                   selectedChoice.url === choice.url ? "lightseagreen" : "",
               }}
+              data-test="choiceItem"
               onClick={() => handleSelect(choice)}
             >
               <Row>
                 <Col sm={4}>{choice.choice}</Col>
-                <Col sm={2}>{choice.votes}</Col>
+                <Col sm={2} data-test="votes">{choice.votes}</Col>
                 <Col sm={2}>{"%" + getPercentage(choice.votes, totalResult)}</Col>
                 <Col sm={4}>
                   {selectedChoice.url === choice.url
@@ -87,6 +88,7 @@ const QuestionDetails = ({
           );
         })}
       <Button
+      data-test="saveVoteButton"
         aria-label={buttonText}
         onClick={() => {
           handleVote(selectedChoice);
