@@ -1,0 +1,17 @@
+version: "3.0"
+
+services:
+  react-app:
+    container_name: poll-collection
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - "./:/usr/src/app"
+      - "/usr/src/app/node_modules"
+    ports:
+      - 8000:8000
+    environment:
+      - PORT=8000
+      - CHOKIDAR_USEPOLLING=true
+      - NODE_ENV=development
